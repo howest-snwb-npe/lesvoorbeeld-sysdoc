@@ -2,3 +2,9 @@
 # hostname
 # OS
 # ip-adres
+
+hostname = input("Geef de hostname: ")
+os = input("Geef het OS: ")
+ip = input("Geef het ip-adres: ")
+
+print(f"{hostname:20} {os:15} {ip:30}")

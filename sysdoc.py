@@ -5,7 +5,23 @@
 
 import ipaddress
 
+def ask_os():
+    """
+    Function to ask and check if input is a valid os
+    """
+    while True:
+        os = input("Geef het OS: ")
+        valid_os = ["Windows", "Linux", "MacOS"]
+        if os in valid_os:
+            return os
+        else:
+            print('Dit is geen geldig os, geldige waarden zijn: "Windows", "Linux", "MacOS"')
+
+
 def ask_ip():
+    """
+    Function to ask and check if input is a valid ip address
+    """
     while True:
         ip = input("Geef het ip-adres: ")
         try:
@@ -22,7 +38,7 @@ while True:
     hostname = input('Geef de hostname of "end" om te stoppen: ')
     if hostname == "end":
         break
-    os = input("Geef het OS: ")
+    os = ask_os()
     ip = ask_ip()
 
     print(f"{hostname:20} {os:15} {ip:30}")

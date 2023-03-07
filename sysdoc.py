@@ -2,6 +2,10 @@
 # hostname
 # OS
 # ip-adres
+
+# lijst om de dictionaries in te bewaren
+systems = []
+
 while True:
     hostname = input('Geef de hostname of "end" om te stoppen: ')
     if hostname == "end":
@@ -13,4 +17,6 @@ while True:
 
     #{ "key": "value" }
     system = {"hostname": hostname, "os": os, "ip": ip}
-    print(system)
+    #print(system)
+    systems.append(system)
+#print(systems)

@@ -5,6 +5,32 @@
 
 import ipaddress
 
+
+def main():
+    # lijst om de dictionaries in te bewaren
+    systems = []
+
+    while True:
+        hostname = input('Geef de hostname of "end" om te stoppen: ')
+        if hostname == "end":
+            break
+        os = ask_os()
+        ip = ask_ip()
+
+        print(f"{hostname:20} {os:15} {ip:30}")
+
+        #{ "key": "value" }
+        system = {"hostname": hostname, "os": os, "ip": ip}
+        #print(system)
+        systems.append(system)
+    #print(systems)
+
+    print(f"{'hostname':20} | {'os':15} | {'ip':30}")
+    print('-'*65)
+    for system in systems:
+        print(f'{system["hostname"]:20} | {system["os"]:15} | {system["ip"]:30}')
+
+
 def ask_os():
     """
     Function to ask and check if input is a valid os
@@ -30,26 +56,4 @@ def ask_ip():
         except ValueError:
             print("Dit is geen geldig ip")
 
-
-# lijst om de dictionaries in te bewaren
-systems = []
-
-while True:
-    hostname = input('Geef de hostname of "end" om te stoppen: ')
-    if hostname == "end":
-        break
-    os = ask_os()
-    ip = ask_ip()
-
-    print(f"{hostname:20} {os:15} {ip:30}")
-
-    #{ "key": "value" }
-    system = {"hostname": hostname, "os": os, "ip": ip}
-    #print(system)
-    systems.append(system)
-#print(systems)
-
-print(f"{'hostname':20} | {'os':15} | {'ip':30}")
-print('-'*65)
-for system in systems:
-    print(f'{system["hostname"]:20} | {system["os"]:15} | {system["ip"]:30}')
+main()

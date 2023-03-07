@@ -8,3 +8,7 @@ os = input("Geef het OS: ")
 ip = input("Geef het ip-adres: ")
 
 print(f"{hostname:20} {os:15} {ip:30}")
+
+#{ "key": "value" }
+system = {"hostname": hostname, "os": os, "ip": ip}
+print(system)
